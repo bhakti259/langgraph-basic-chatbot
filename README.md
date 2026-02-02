@@ -102,10 +102,22 @@ Create a `.env` file in the project root:
 
 ```env
 OPENAI_API_KEY=sk-...your-key-here...
+
+# Optional: LangSmith tracing for monitoring and debugging
+LANGCHAIN_TRACING_V2=true
+LANGCHAIN_ENDPOINT=https://api.smith.langchain.com
+LANGCHAIN_API_KEY=your-langsmith-api-key
+LANGCHAIN_PROJECT=your-project-name
 ```
 
 **Required:**
 - `OPENAI_API_KEY`: Your OpenAI API key
+
+**Optional:**
+- `LANGCHAIN_TRACING_V2`: Enable LangSmith tracing (set to `true` to enable)
+- `LANGCHAIN_ENDPOINT`: LangSmith API endpoint
+- `LANGCHAIN_API_KEY`: LangSmith API key (from https://smith.langchain.com)
+- `LANGCHAIN_PROJECT`: Project name for organizing traces in LangSmith
 
 ### Optional Configuration
 
