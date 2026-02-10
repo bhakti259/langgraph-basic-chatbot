@@ -17,12 +17,12 @@ A conversational AI chatbot built with **LangGraph**, featuring a **Streamlit** 
 - **Backend:** LangGraph, LangChain, OpenAI API
 - **Frontend:** Streamlit
 - **Database:** SQLite with LangGraph checkpoints
-- **Language:** Python 3.14+
+- **Language:** Python 3.10+ (3.11–3.12 recommended)
 
 ## Installation
 
 ### Prerequisites
-- Python 3.10+
+- Python 3.10+ (3.11–3.12 recommended; Python 3.14 may show Pydantic v1 warnings)
 - OpenAI API key
 - Git
 
@@ -59,7 +59,7 @@ Get your OpenAI API key from: https://platform.openai.com/api-keys
 
 5. **Run the application:**
 ```bash
-streamlit run streamlit_frontend_db.py
+python -m streamlit run streamlit_frontend_db.py
 ```
 
 The app will open at `http://localhost:8501`
@@ -71,6 +71,7 @@ langgraph-basic-chatbot/
 ├── langgraph_db_backend.py          # LangGraph chatbot logic with SQLite
 ├── streamlit_frontend_db.py         # Streamlit web interface
 ├── streamlit_frontend_threading.py  # Threading-based frontend (alternative)
+├── streamlit_frontend_wit_streamingh.py # Streaming-based frontend (alternative)
 ├── langgraph_chatbot.db             # SQLite database (auto-created)
 ├── .env                             # Environment variables (create locally)
 ├── .gitignore                       # Git ignore rules
@@ -168,6 +169,11 @@ venv\Scripts\activate     # Windows
 pip install -r requirements.txt
 ```
 
+### Issue: Pydantic v1 warning on Python 3.14
+**Symptom:** `Core Pydantic V1 functionality isn't compatible with Python 3.14 or greater.`
+
+**Solution:** Use Python 3.11 or 3.12 for best compatibility with LangChain/LangGraph.
+
 ### Issue: OpenAI API errors
 **Solution:** Check your API key:
 - Verify `OPENAI_API_KEY` is set correctly in `.env`
@@ -222,4 +228,4 @@ For issues or questions:
 
 ---
 
-**Last Updated:** January 29, 2026
+**Last Updated:** February 10, 2026
